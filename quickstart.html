@@ -1,0 +1,22 @@
+<html>
+<head>
+    <script src="startup.js">
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    </script>
+</head>
+<body onload="loadCalendarApi()">
+<div id="authorize-div" style="display: none">
+    <span>Authorize access to Google Calendar API</span>
+    <!--Button for the user to click to initiate auth sequence -->
+    <button id="authorize-button" onclick="handleAuthClick(event)">
+        Authorize
+    </button>
+</div>
+<pre id="output"></pre>
+<label>Enter an event name to be inserted</label>
+<input type="text" id="userInputtedEventName">
+<!-- <button id="createEventBtn" onclick="loadCalendarApi()">Add event to calendar</button>  -->
+<!-- user must wait until authentication is complete before doing pressing submit -->
+</body>
+</html>

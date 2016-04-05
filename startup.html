@@ -4,13 +4,25 @@
     <title>Reverse Calendar</title>
     <script src="jquery-1.12.0.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="startup.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script> <!-- this must be after startup.js -->
 </head>
-<body>
+<body onload="loadCalendarApi()">
+<div id="authorize-div" style="display: none">
+    <span>Authorize access to Google Calendar API</span>
+    <!--Button for the user to click to initiate auth sequence -->
+    <button id="authorize-button" onclick="handleAuthClick(event)">
+        Authorize
+    </button>
+
+    <pre id="output"></pre>
     <div id="main">
-       <h1>Welcome To RevCal</h1>
-       <h4> <em> The one and only Reversed Calendar! </em> </h5>
-       <p>Please sign in to get started :)</p>
-       <img src="login.png" > <a href=""></a>
-    </div> <!-- id="main" -->
+        <h1>Welcome To RevCal</h1>
+        <h4> <em> The one and only Reversed Calendar! </em> </h4>
+            <p>Please sign in to get started :)</p>
+            <img src="login.png"> <a href=""></a>
+    </div>
+</div> <!-- id="main" -->
+
 </body>
 </html>

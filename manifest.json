@@ -1,8 +1,9 @@
 {
 	"manifest_version": 2,
+    "short_name": "RevCal",
 	"name":"Reverse Calendar",
 	"description": "Google Calendar based diary!",
-	"version": "1.0",
+	"version": "1.1",
 
 	"browser_action":{
 		"default_icon":"icon.png",
@@ -10,6 +11,10 @@
 	},
 
 	"options_page" :"options.html",
+
+	"background" :{
+     "scripts": ["background.js"]
+    },
 
   "permissions": [
 		"storage"
