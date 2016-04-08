@@ -5,23 +5,24 @@
     <script src="jquery-1.12.0.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="startup.js"></script>
+    <!--<script src="https://apis.google.com/js/client.js"></script> &lt;!&ndash; this must be after startup.js. This is also where gapi is from&ndash;&gt;-->
+    <script src="client.js"></script> <!-- this must be after startup.js. This is also where gapi is from-->
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script> <!-- this must be after startup.js -->
 </head>
 <body onload="loadCalendarApi()">
-<div id="authorize-div" style="display: none">
+<div id="authorize-div" style="display: one">
     <span>Authorize access to Google Calendar API</span>
+    <button id="list-button" onclick="listUpcomingEvents()"> list </button>
     <!--Button for the user to click to initiate auth sequence -->
     <button id="authorize-button" onclick="handleAuthClick(event)">
         Authorize
     </button>
-
     <pre id="output"></pre>
-    <div id="main">
-        <h1>Welcome To RevCal</h1>
-        <h4> <em> The one and only Reversed Calendar! </em> </h4>
-            <p>Please sign in to get started :)</p>
-            <img src="login.png"> <a href=""></a>
-    </div>
+    <h1>Welcome To RevCal</h1>
+    <h4> <em> The one and only Reversed Calendar! </em> </h4>
+    <p>Please sign in to get started :)</p>
+    <a href="https://accounts.google.com/o/oauth2/v2/auth?response_type=token&client_id=523819935458-067tls3kg8s2odnrtd7bl622r4a0dlfn.apps.googleusercontent.com&scope=email%20profile&redirect_uri=http://janac.me">
+    <img src="login.png"> </a>
 </div> <!-- id="main" -->
 
 </body>
